@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,         KC_F,     KC_G,        KC_C,        KC_R,           KC_L,         KC_MINUS,
                      KC_D,     KC_H,        KC_T,        KC_N,           KC_S,         KC_SLASH,
     TD(HS_LBIND),    KC_B,     KC_M,        KC_W,        KC_V,           RALT_T(KC_Z), KC_RSPC,
-                               KC_UP,       KC_DOWN,     MAD_HASH,       _______,      _______,
+                               KC_DOWN,     KC_UP,       MAD_HASH,       _______,      _______,
 
     KC_TRANSPARENT, KC_ESCAPE,
     KC_PGUP,
