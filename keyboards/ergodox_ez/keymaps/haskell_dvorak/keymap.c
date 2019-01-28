@@ -3,6 +3,7 @@
 #include "action_layer.h"
 #include "version.h"
 #include "keycodes.h"
+#include "tap_dance.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -28,20 +29,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [0] = LAYOUT_ergodox(
     _______,       PD_LBRACKET,         PD_LBRC,     PD_RBRC,     MAD_AT,      PD_EQ,    HS_RARR,
-    KC_TAB,        KC_QUOTE,            KC_COMMA,    KC_DOT,      KC_P,        KC_Y,     GUI_T(KC_LBRACKET),
+    KC_TAB,        KC_QUOTE,            KC_COMMA,    KC_DOT,      KC_P,        KC_Y,     TD(HS_AP),
     _______,       KC_A,                KC_O,        KC_E,        KC_U,        KC_I,
-    KC_LSPO,       RALT_T(KC_SCOLON),   KC_Q,        KC_J,        KC_K,        KC_X,     KC_EQUAL,
+    KC_LSPO,       RALT_T(KC_SCOLON),   KC_Q,        KC_J,        KC_K,        KC_X,     TD(HS_RBIND),
     _______,       KC_GRV,              PD_DOL,      KC_LEFT,     KC_RIGHT,
 
                                                                                 KC_INSERT,        KC_TRANSPARENT,
                                                                                                   KC_HOME,
                                                               CTL_T(KC_BSPACE), ALT_T(KC_DELETE), KC_END,
 
-    HS_LARR,             PD_STAR,  MAD_HAT,     PD_PLUS,     PD_RBRACKET,    PD_EXLM,      KC_BSLASH,
-    RGUI_T(KC_RBRACKET), KC_F,     KC_G,        KC_C,        KC_R,           KC_L,         KC_MINUS,
-                         KC_D,     KC_H,        KC_T,        KC_N,           KC_S,         KC_SLASH,
-    KC_ASTR,             KC_B,     KC_M,        KC_W,        KC_V,           RALT_T(KC_Z), KC_RSPC,
-                                   KC_UP,       KC_DOWN,     MAD_HASH,       _______,      _______,
+    HS_LARR,         PD_STAR,  MAD_HAT,     PD_PLUS,     PD_RBRACKET,    PD_EXLM,      KC_BSLASH,
+    _______,         KC_F,     KC_G,        KC_C,        KC_R,           KC_L,         KC_MINUS,
+                     KC_D,     KC_H,        KC_T,        KC_N,           KC_S,         KC_SLASH,
+    TD(HS_LBIND),    KC_B,     KC_M,        KC_W,        KC_V,           RALT_T(KC_Z), KC_RSPC,
+                               KC_UP,       KC_DOWN,     MAD_HASH,       _______,      _______,
 
     KC_TRANSPARENT, KC_ESCAPE,
     KC_PGUP,
@@ -66,19 +67,6 @@ bool suspended = false;
 /*       } */
 /*     return MACRO_NONE; */
 /* }; */
-
-/* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
-/*   switch (keycode) { */
-/*     // dynamically generate these. */
-/*     case EPRM: */
-/*       if (record->event.pressed) { */
-/*         eeconfig_init(); */
-/*       } */
-/*       return false; */
-/*       break; */
-/*   } */
-/*   return true; */
-/* } */
 
 uint32_t layer_state_set_user(uint32_t state) {
 
