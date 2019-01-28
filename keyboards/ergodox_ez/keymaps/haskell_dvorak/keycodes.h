@@ -35,10 +35,14 @@ enum custom_keycodes {
 
 __attribute__((always_inline))
 inline void send_dvorak_key(uint8_t shift_pressed, char* k1, char* k2) {
-  if (shift_pressed)
+  if (shift_pressed) {
+    uint8_t mods = get_mods();
+    unregister_mods(SHIFT_MOD);
     send_string(k2);
-  else
+    register_mods(mods);
+  } else {
     send_string(k1);
+  }
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
