@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,        KC_QUOTE,            KC_COMMA,    KC_DOT,      KC_P,        KC_Y,     TD(HS_AP),
     _______,       KC_A,                KC_O,        KC_E,        KC_U,        KC_I,
     KC_LSPO,       RALT_T(KC_SCOLON),   KC_Q,        KC_J,        KC_K,        KC_X,     TD(HS_RBIND),
-    _______,       KC_GRV,              PD_DOL,      KC_LEFT,     KC_RIGHT,
+    OSL(1),        KC_GRV,              PD_DOL,      KC_LEFT,     KC_RIGHT,
 
                                                                        KC_INSERT,        KC_TRANSPARENT,
                                                                                          KC_HOME,
